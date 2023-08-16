@@ -17,7 +17,7 @@ export default {
       links: [
         { to: '/home', name: 'Pokemons' },
         { to: '/pokemon/50', name: 'Por ID' },
-        { to: '/abaut', name: 'About' },
+        { to: '/about', name: 'About' },
         { to: 'https://google.com', name: 'Google' },
       ]
     }
