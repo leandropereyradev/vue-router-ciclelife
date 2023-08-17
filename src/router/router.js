@@ -15,7 +15,7 @@ const routes = [
     children: [
       {
         path: "",
-        name: "home",
+        name: "pokemon-home",
         component: () =>
           import(
             /* webpackChunkName:"ListPage" */ "@/modules/pokemon/pages/ListPage"
@@ -23,7 +23,7 @@ const routes = [
       },
       {
         path: "about",
-        name: "about",
+        name: "pokemon-about",
         component: () =>
           import(
             /* webpackChunkName:"AboutPage" */ "@/modules/pokemon/pages/AboutPage"
@@ -41,6 +41,36 @@ const routes = [
 
           return isNaN(id) ? { id: 1 } : { id };
         },
+      },
+    ],
+  },
+  {
+    path: "/dbz",
+    name: "dbz",
+    component: () =>
+      import(
+        /* webpackChunkName:"DBZ Layout" */ "@/modules/dragon-ball-z/layouts/DragonBallLayout"
+      ),
+    children: [
+      {
+        path: "characters",
+        name: "dbz-characters",
+        component: () =>
+          import(
+            /* webpackChunkName:"Characters" */ "@/modules/dragon-ball-z/pages/Characters"
+          ),
+      },
+      {
+        path: "about",
+        name: "dbz-about",
+        component: () =>
+          import(
+            /* webpackChunkName:"AboutPage" */ "@/modules/dragon-ball-z/pages/About"
+          ),
+      },
+      {
+        path: "/",
+        redirect: { name: "dbz-characters" },
       },
     ],
   },
